@@ -98,6 +98,16 @@ export default class Experience
         this.world = new World()
     }
 
+    getStarsCount()
+    {
+        return this.world.getStarsCount()
+    }
+
+    setStarsCount(_count)
+    {
+        this.world.setStarsCount(_count)
+    }
+
     update()
     {
         if(this.stats)

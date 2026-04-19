@@ -18,10 +18,17 @@ export default class Stars
         this.setParticles()
     }
 
-    setParticles()
+    setParticles(_count = 1)
     {
+        if(this.particles?.points)
+        {
+            this.scenes.space.remove(this.particles.points)
+            this.particles.geometry.dispose()
+            this.particles.material.dispose()
+        }
+
         this.particles = {}
-        this.particles.count = 50000
+        this.particles.count = _count
 
         // Geometry
         const positionArray = new Float32Array(this.particles.count * 3)
@@ -68,6 +75,16 @@ export default class Stars
         this.particles.points.frustumCulled = false
 
         this.scenes.space.add(this.particles.points)
+    }
+
+    setCount(_count)
+    {
+        const count = Math.max(1, Math.floor(_count))
+
+        if(count === this.particles.count)
+            return
+
+        this.setParticles(count)
     }
 
     resize()

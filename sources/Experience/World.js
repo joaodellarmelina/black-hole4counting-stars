@@ -13,7 +13,13 @@ export default class World
         this.resources = this.experience.resources
 
         this.blackHole = new BlackHole()
+
+
+        // couting stars
         this.stars = new Stars()
+
+
+
         // this.resources.on('groupEnd', (_group) =>
         // {
         //     if(_group.name === 'base')
@@ -22,6 +28,20 @@ export default class World
         //     }
         // })
     }
+
+
+    // couting stars 
+    getStarsCount()
+    {
+        return this.stars.particles.count
+    }
+
+    setStarsCount(_count)
+    {
+        this.stars.setCount(_count)
+    }
+
+
 
     resize()
     {        
