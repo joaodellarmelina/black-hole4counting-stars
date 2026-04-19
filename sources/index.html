@@ -30,8 +30,35 @@
     <body>
         <div class="experience"></div>
 
+
+        <!-- couting stars -->
+        <form class="stars-control" novalidate>
+            <label class="stars-control__label" for="stars-count">Stars</label>
+            <input
+                id="stars-count"
+                class="stars-control__input"
+                name="starsCount"
+                type="range"
+                min="1"
+                max="100000000"
+                step="1"
+            />
+            <input
+                id="stars-count-number"
+                class="stars-control__number"
+                name="starsCountNumber"
+                type="number"
+                min="1"
+                max="100000000"
+                step="1"
+            />
+            <button class="stars-control__button" type="submit">Save</button>
+            <output class="stars-control__value" for="stars-count stars-count-number">50,000</output>
+            <output class="stars-control__bytes" for="stars-count stars-count-number">1.34 MB</output>
+        </form>
+
         <div class="credits">
-            WebGL Black Hole by <a href="https://bruno-simon.com" target="_blank">Bruno Simon</a> (<a href="https://github.com/brunosimon/webgl-black-hole" target="_blank">Source code</a>)
+            Follow me - <a href="https://www.instagram.com/joaodellarmelina/" target="_blank">João Dellarmelina</a>. (<a href="https://github.com/joaodellarmelina/black-hole4counting-stars" target="_blank">Source code</a>)
         </div>
 
         <script type="module" src="./index.js"></script>
